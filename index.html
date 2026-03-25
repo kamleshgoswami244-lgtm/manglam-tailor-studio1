@@ -135,20 +135,16 @@
 <script>
 function sendToWhatsApp(e) {
   e.preventDefault();
+
   let name = document.getElementById('name').value;
   let phone = document.getElementById('phone').value;
+  let address = document.getElementById('address').value;
+  let pincode = document.getElementById('pincode').value;
   let type = document.getElementById('type').value;
   let measure = document.getElementById('measure').value;
   let date = document.getElementById('date').value;
-  let address = document.getElementById('address').value;
-let pincode = document.getElementById('pincode').value;
 
-  let msg = `Name: ${name}%0APhone: ${phone}%0ACloth: ${type}%0AMeasurements: ${measure}%0ADelivery: ${date}`;
-
-  window.open(`https://wa.me/918758150649?text=${msg}`, '_blank');
-}
-  
-let msg = encodeURIComponent(
+  let msg = encodeURIComponent(
 `Name: ${name}
 Phone: ${phone}
 Address: ${address}
@@ -156,7 +152,10 @@ Pincode: ${pincode}
 Cloth: ${type}
 Measurements: ${measure}
 Delivery: ${date}`
+  );
 
+  window.open(`https://wa.me/918758150649?text=${msg}`, '_blank');
+}
 );
 
 let index = 0;
