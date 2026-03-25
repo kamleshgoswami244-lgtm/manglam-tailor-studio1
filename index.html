@@ -76,8 +76,8 @@
     <form onsubmit="sendToWhatsApp(event)">
       <input type="text" id="name" placeholder="Your Name" required>
       <input type="text" id="phone" placeholder="Phone Number" required>
-       <input type="text" id="Addresh" placeholder="addresh" required>
-       <input type="text" id="pincode" placeholder="pincode number" required>
+       <input type="text" id="addresh" placeholder="addresh" required>
+       <input type="text" id="pincode" placeholder="pincode " required>
       <select id="type">
         <option>FROCK</option>
         <option>CHANIYA CHOLI</option>
@@ -140,19 +140,23 @@ function sendToWhatsApp(e) {
   let type = document.getElementById('type').value;
   let measure = document.getElementById('measure').value;
   let date = document.getElementById('date').value;
+  let address = document.getElementById('address').value;
+let pincode = document.getElementById('pincode').value;
 
   let msg = `Name: ${name}%0APhone: ${phone}%0ACloth: ${type}%0AMeasurements: ${measure}%0ADelivery: ${date}`;
 
   window.open(`https://wa.me/918758150649?text=${msg}`, '_blank');
 }
-  let msg = encodeURIComponent(
+  
+let msg = encodeURIComponent(
 `Name: ${name}
 Phone: ${phone}
+Address: ${address}
+Pincode: ${pincode}
 Cloth: ${type}
 Measurements: ${measure}
-Delivery: ${date}
+Delivery: ${date}`
 
-Please attach your design photo`
 );
 
 let index = 0;
