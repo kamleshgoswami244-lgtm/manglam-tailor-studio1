@@ -142,6 +142,15 @@ function sendToWhatsApp(e) {
 
   window.open(`https://wa.me/918758150649?text=${msg}`, '_blank');
 }
+  let msg = encodeURIComponent(
+`Name: ${name}
+Phone: ${phone}
+Cloth: ${type}
+Measurements: ${measure}
+Delivery: ${date}
+
+Please attach your design photo`
+);
 
 let index = 0;
 function move(step) {
