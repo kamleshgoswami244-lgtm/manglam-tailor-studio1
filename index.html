@@ -72,12 +72,13 @@
 
 <section id="order">
   <div class="card">
-    <h2>Place Your Order</h2>
-    <form onsubmit="sendToWhatsApp(event)">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="text" id="phone" placeholder="Phone Number" required>
+    <h2>Place Your Order</h2> 
+   <form onsubmit="sendToWhatsApp(event)">
+      <input type="text" id="name" placeholder=" Name" required>
+      <input type="text" id="phone" placeholder="Phone" required>
        <input type="text" id="addresh" placeholder="addresh" required>
        <input type="text" id="pincode" placeholder="pincode " required>
+    
       <select id="type">
         <option>FROCK</option>
         <option>CHANIYA CHOLI</option>
@@ -135,6 +136,7 @@
 <script>
 function sendToWhatsApp(e) {
   e.preventDefault();
+  alert("Working");
 
   let name = document.getElementById('name').value;
   let phone = document.getElementById('phone').value;
